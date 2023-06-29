@@ -1,0 +1,1 @@
+By registering supermarkets and products you can make your grocery lists knowing how much you're gonna spend and which  supermarket the products you want have the best prices so you can save some money

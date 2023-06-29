@@ -1,0 +1,13 @@
+{
+	"nodes":[
+		{"id":"8cc2024261a30791","x":-121,"y":-271,"width":246,"height":301,"type":"text","text":"<center> user </center>\n<hr>\n\nid - integer primary\nname - varchar 255\nemail - varchar 255\npassword - varchar 100\nbirthdate - timestamps\n"},
+		{"id":"2a3af608b0b6f378","x":458,"y":-377,"width":250,"height":285,"type":"text","text":"<center>user_situation</center>\n\n<hr>\n\nid - integer primary\nname - varchar (100)\ncan_navigate - boolean"},
+		{"id":"d12b99caefe8ccba","x":498,"y":-23,"width":298,"height":301,"type":"text","text":"<center>email_verification</center>\n\n<hr>\n\n- id - integer primary\n- user_id - integer foreign key\n- code - varchar 6\n- expiration_date - timestamps"},
+		{"id":"39f8e8bad8b092b5","x":191,"y":-734,"width":521,"height":218,"color":"3","type":"text","text":"situations:\n- Active - can navigate through system\n- Inactive - User inactive his own account\n- Validating - User should validate his email\n- Soft-Banned - Can navigate system but not register products and markets\n- Banned - can't use the system"}
+	],
+	"edges":[
+		{"id":"5e642dd90a4cda1e","fromNode":"8cc2024261a30791","fromSide":"right","toNode":"d12b99caefe8ccba","toSide":"left","label":"Has Many"},
+		{"id":"358264f7dea8bf46","fromNode":"8cc2024261a30791","fromSide":"right","toNode":"2a3af608b0b6f378","toSide":"left","label":"Has one"},
+		{"id":"156014eee6747996","fromNode":"2a3af608b0b6f378","fromSide":"top","toNode":"39f8e8bad8b092b5","toSide":"bottom"}
+	]
+}
