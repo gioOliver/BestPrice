@@ -7,11 +7,14 @@
 		{"type":"text","text":"<center>supermarket</center>\n\n<hr>\n\n- id - integer primary\n- parent_id - int foreign\n- name - varchar 255\n- chain_id - integer foreign\n- user_id - integer foreign \n- zip_id - integer foreign\n- state_id - integer foreign\n- city_id - integer foreign\n- district_id - integer foreign\n- number - string 15\n- additional_data - string 50\n- created_at - timestamps \n- updated_at - timestamps\n- deleted_at - timestamps","id":"69db6872aba6ed1e","x":487,"y":580,"width":393,"height":540},
 		{"type":"text","text":"<center>supermarket_chain</center>\n\n<hr>\n\n- id - integer primary\n- name - varchar 100\n- user_id - foreign\n- created_at - timestamps \n- updated_at - timestamps\n- deleted_at - timestamps","id":"5d9823241cae7ed2","x":667,"y":169,"width":290,"height":300},
 		{"type":"text","text":"<center>user_address</center>\n\n<hr>\n\n- id - integer primary\n- user_id - integer foreign\n- zip_id - integer foreign\n- state_id - integer foreign\n- city_id - integer foreign\n- district_id - integer foreign\n- number - string 15\n- additional_data - string 50\n- created_at - timestamps \n- updated_at - timestamps\n- deleted_at - timestamps","id":"2ad0180e60b914f7","x":847,"y":-315,"width":333,"height":440},
-		{"type":"text","text":"<center>default table</center>\n\n<hr>\n\n- id - integer primary\n- \n- created_at - timestamps \n- updated_at - timestamps\n- deleted_at - timestamps","id":"a030342a7ce67b88","x":1840,"y":-391,"width":290,"height":240},
 		{"type":"text","text":"<center>Zip</center>\n\n<hr>\n\n- id - integer primary\n- zip_code - varchar 10\n- street_name - varchar 255\n- district_id - integer foreign\n- created_at - timestamps \n- updated_at - timestamps\n- deleted_at - timestamps","id":"36c78a2f49fdbb51","x":1460,"y":-335,"width":290,"height":335},
 		{"type":"text","text":"<center>district</center>\n\n<hr>\n\n- id - integer primary\n- name - varchar 100\n- city_id - integer foreign\n- created_at - timestamps \n- updated_at - timestamps\n- deleted_at - timestamps","id":"2d7f0b78e9c4aa95","x":1460,"y":125,"width":290,"height":275},
 		{"type":"text","text":"<center>City</center>\n\n<hr>\n\n- id - integer primary\n- code - varchar 10\n- name - varchar 100\n- created_at - timestamps \n- updated_at - timestamps\n- deleted_at - timestamps","id":"bbc7a91cc461ea2e","x":1460,"y":540,"width":290,"height":310},
-		{"type":"text","text":"<center>State</center>\n\n<hr>\n\n- id - integer primary\n- name - varchar 100\n- initials_code - integer\n- initials - varchar 2\n- created_at - timestamps \n- updated_at - timestamps\n- deleted_at - timestamps","id":"69beb5978e49fa78","x":1445,"y":960,"width":320,"height":320}
+		{"type":"text","text":"<center>State</center>\n\n<hr>\n\n- id - integer primary\n- name - varchar 100\n- initials_code - integer\n- initials - varchar 2\n- created_at - timestamps \n- updated_at - timestamps\n- deleted_at - timestamps","id":"69beb5978e49fa78","x":1445,"y":960,"width":320,"height":320},
+		{"type":"text","text":"<center>brand</center>\n\n<hr>\n\n- id - integer primary\n- name\n- user_id - integer foreign\n- created_at - timestamps \n- updated_at - timestamps\n- deleted_at - timestamps","id":"9aee6fe23f961d92","x":-940,"y":428,"width":290,"height":296},
+		{"type":"text","text":"<center>default table</center>\n\n<hr>\n\n- id - integer primary\n- \n- created_at - timestamps \n- updated_at - timestamps\n- deleted_at - timestamps","id":"a030342a7ce67b88","x":-592,"y":-50,"width":290,"height":260},
+		{"type":"text","text":"<center>supermarket_product</center>\n\n<hr>\n\n- id - integer primary\n- supermarket_id - integer foreign\n- product_id - integer foreign\n- user_id - integer foreign\n- price - numeric 10,2\n- created_at - timestamps \n- updated_at - timestamps\n- deleted_at - timestamps","id":"de606130bb56321b","x":40,"y":580,"width":280,"height":400},
+		{"type":"text","text":"<center>product</center>\n\n<hr>\n\n- id - integer primary\n- brand\n- name\n- user_id - integer foreign\n- created_at - timestamps \n- updated_at - timestamps\n- deleted_at - timestamps","id":"34e1142b0938a028","x":-464,"y":580,"width":325,"height":352}
 	],
 	"edges":[
 		{"id":"5e642dd90a4cda1e","fromNode":"8cc2024261a30791","fromSide":"right","toNode":"d12b99caefe8ccba","toSide":"left","label":"Has Many"},
@@ -31,6 +34,11 @@
 		{"id":"48c44595a3279347","fromNode":"2ad0180e60b914f7","fromSide":"right","toNode":"69beb5978e49fa78","toSide":"left","label":"Has One"},
 		{"id":"9c0cb85ed0d20616","fromNode":"69db6872aba6ed1e","fromSide":"right","toNode":"2d7f0b78e9c4aa95","toSide":"left","label":"Has One"},
 		{"id":"3305fa2b6267954a","fromNode":"69db6872aba6ed1e","fromSide":"right","toNode":"bbc7a91cc461ea2e","toSide":"left","label":"Has One"},
-		{"id":"3bded8a45b27ef03","fromNode":"69db6872aba6ed1e","fromSide":"right","toNode":"69beb5978e49fa78","toSide":"left","label":"Has One"}
+		{"id":"3bded8a45b27ef03","fromNode":"69db6872aba6ed1e","fromSide":"right","toNode":"69beb5978e49fa78","toSide":"left","label":"Has One"},
+		{"id":"593fa6dac9f7ff04","fromNode":"8cc2024261a30791","fromSide":"bottom","toNode":"9aee6fe23f961d92","toSide":"top","label":"Has Many"},
+		{"id":"922e6b6d58658bc4","fromNode":"9aee6fe23f961d92","fromSide":"right","toNode":"34e1142b0938a028","toSide":"left","label":"Has Many"},
+		{"id":"9cf775774a1f7262","fromNode":"8cc2024261a30791","fromSide":"bottom","toNode":"34e1142b0938a028","toSide":"top"},
+		{"id":"1ed7ffb150492a23","fromNode":"34e1142b0938a028","fromSide":"right","toNode":"de606130bb56321b","toSide":"left","label":"Has Many"},
+		{"id":"4de7e7e48f6bd7bd","fromNode":"69db6872aba6ed1e","fromSide":"left","toNode":"de606130bb56321b","toSide":"right","label":"Has Many"}
 	]
 }
