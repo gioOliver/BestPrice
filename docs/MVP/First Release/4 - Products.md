@@ -1,3 +1,4 @@
+
 A user can link a product to a supermarket
 
 If the product exists, user set the price in the supermarket
